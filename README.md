@@ -3,6 +3,8 @@
 ### 计算机基础
 
 - [Linux IO一些基本概念](base/IO_module.md)
+- [多路复用IO](base/demultiplexer_IO.md)
+- [四种IO工作模式](base/4_IO_module.md)
 
 ### Nodejs
 
