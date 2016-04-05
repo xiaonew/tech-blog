@@ -1,15 +1,15 @@
 ## 多路复用IO
 
-    在学习下面的知识之前，先感谢下[蓝行参](https://www.zhihu.com/people/thynson)和
-
-
+在学习下面的知识之前，先感谢下[蓝行参](https://www.zhihu.com/people/thynson)和[人运思云](https://segmentfault.com/a/1190000003063859)
 
 ### 多路复用概念
 
  I/O multiplexing 这里面的 multiplexing 指的其实是在单个线程通过记录跟踪每一个Sock(I/O流)的状态来同时管理多个I/O流. 发明它的原因，是尽量多的提高服务器的吞吐能力。
 
+![](https://raw.githubusercontent.com/xiaonew/tech-blog/master/img/1.png)
 
-
+![](https://raw.githubusercontent.com/xiaonew/tech-blog/master/img/2.jpg)
+**可以简单的这样理解在同一个线程里面， 通过拨开关的方式，来同时传输多个I/O流**
 
 ### 流的概念
 
