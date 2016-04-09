@@ -9,3 +9,7 @@
 ### Nodejs
 
 - [Nodejs 事件循环](nodejs/NodeJs_Eventdriven_生活实例.md)
+
+### 设计模式
+
+- [适配器模式]
