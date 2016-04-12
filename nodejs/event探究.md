@@ -79,7 +79,7 @@
 
 第一章图已经介绍过Event Loop的执行流程,下面一张更详细的展示了Event Loop的执行过程
 
-![](https://raw.githubusercontent.com/xiaonew/tech-blog/master/img/2_5.png)
+![](https://raw.githubusercontent.com/xiaonew/tech-blog/master/img/2_5.jpg)
 
 
 ### 参考
