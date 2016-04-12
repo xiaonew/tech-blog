@@ -4,30 +4,22 @@
 
 在进程启动时,Node 便会创建一个类似于while(true)的循环,每次执行一次循环体的过程被称为tick.每个tick过程就是查看是否有时间待处理。如果有，就取出事件及相关的回调函数。如果存在关联的回调函数，就执行他们，然后进入下一个循环。如果不再有事件处理,就退出流程
 
-```flow
-st=>start: 开始
-e=>end: 退出
-
-cond1=>condition: 还有事件?
-cond2=>condition: 是否有关联回调
-
-op=>operation: 取出一个事件
-op1=>operation: 执行回调
-
-st->cond1
-op->cond2
-cond1(yes)->op
-cond1(no)->e
-
-op=>operation: 取出一个事件
-op=>operation: 取出一个事件
-op1->cond1
-cond2(yes)->op1
-cond2(no)->cond1
-
-```
-
 ![](https://raw.githubusercontent.com/xiaonew/tech-blog/master/img/2_4.png)
+
+
+### 事件驱动模型
+
+程序响应外部事件有如下两种方式:
+
+-   中断
+
+操作系统处理键盘等硬件输入就是通过中断来进行的,这个方式的好处就是即使没有多线程，我们也可以放心地执行我们的代码,CPU收到中断信号之后自动地转去执行响应的中断处理程序，处理完完成后会恢复原来的代码的执行环境继续执行,这种方式需要硬件支持。
+
+-   轮询
+
+循环检测是否有事件发生，如果有就去执行响应的处理程序。这在底层和上层的开发中都有应用。消息循环不断检测是都有消息出现，有的话就分发消息,调用相应的回调函数进行处理.
+
+[几种轮询方式的详解](base/转载/4_IO_module.md)
 
 
 ### Event Loop
@@ -83,16 +75,21 @@ cond2(no)->cond1
     上图主线程的绿色部分,还是表示运行时间，而橙色部分表示空闲时间。每当遇到I/O的时候,主线程就让Event Loop 线程去通知相应的I/O程序,然后接着往后运行，所以不存在红色的等待时间。等到I/O程序完成操作,Event Loop线程再把结果返回主线程。主线程就调用事先设定的回调函数，完成整个任务。
 
 
+- **Event Loop 执行过程**
 
+第一章图已经介绍过Event Loop的执行流程,下面一张更详细的展示了Event Loop的执行过程
 
-
+![](https://raw.githubusercontent.com/xiaonew/tech-blog/master/img/2_5.png)
 
 
 ### 参考
 
-[初窥Javascript事件机制](https://segmentfault.com/a/1190000002914296)
-[阮一峰eventloop](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
-[understand event loop](https://nodesource.com/blog/understanding-the-nodejs-event-loop/)
-[](http://code.danyork.com/2011/01/25/node-js-doctors-offices-and-fast-food-restaurants-understanding-event-driven-programming/)
-[](http://stackoverflow.com/questions/10680601/nodejs-event-loop)
-http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/
+- [初窥Javascript事件机制](https://segmentfault.com/a/1190000002914296)
+
+- [阮一峰eventloop](http://www.ruanyifeng.com/blog/2013/10/event_loop.html)
+
+- [知乎回答Event loop](https://www.zhihu.com/question/30970837/answer/51566079)
+
+- [understand event loop](https://nodesource.com/blog/understanding-the-nodejs-event-loop/)
+- [understanding-event-driven-programming](http://code.danyork.com/2011/01/25/node-js-doctors-offices-and-fast-food-restaurants-understanding-event-driven-programming/)
+- [nodejs-event-loop](http://stackoverflow.com/questions/10680601/nodejs-event-loop)
