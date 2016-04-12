@@ -3,12 +3,14 @@
 ### 计算机基础
 
 1. IO
-- [Linux IO一些基本概念](base/转载/IO_module.md)
-- [多路复用IO](base/转载/demultiplexer_IO.md)
-- [四种IO工作模式](base/转载/4_IO_module.md)
+
+    - [Linux IO一些基本概念](base/转载/IO_module.md)
+    - [多路复用IO](base/转载/demultiplexer_IO.md)
+    - [四种IO工作模式](base/转载/4_IO_module.md)
 
 2. 多线程
-- [我是一个线程](base/转载/我是一个线程.md)
+
+    - [我是一个线程](base/转载/我是一个线程.md)
 
 ### Nodejs
 
