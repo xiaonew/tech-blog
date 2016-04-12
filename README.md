@@ -14,7 +14,8 @@
 
 ### Nodejs
 
-- [Nodejs 事件循环](nodejs/NodeJs_Eventdriven_生活实例.md)
+- [Event Loop 生活实例](nodejs/NodeJs_Eventdriven_生活实例.md)
+- [Event Loop 探究](nodejs/event探究.md)
 
 ### 设计模式
 
