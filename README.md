@@ -20,3 +20,8 @@
 ### 设计模式
 
 - [适配器模式]
+
+
+### javascript
+
+- [javascript this用法](base/转载/Javascript的this用法.md)
