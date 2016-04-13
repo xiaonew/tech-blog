@@ -25,3 +25,4 @@
 ### javascript
 
 - [javascript this用法](base/转载/Javascript的this用法.md)
+- [apply/call/bind用法](base/转载/apply和call的用法.md)
