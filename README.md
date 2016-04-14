@@ -27,3 +27,8 @@
 
 - [javascript this用法](base/转载/Javascript的this用法.md)
 - [apply/call/bind用法](base/转载/apply和call的用法.md)
+
+
+### 读书笔记
+
+- [深入浅出nodejs](booknote/深入浅出nodejs/index.md)
