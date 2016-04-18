@@ -32,3 +32,4 @@
 ### 读书笔记
 
 - [深入浅出nodejs](booknote/深入浅出nodejs/index.md)
+- [Javascript高级程序设计](booknote/Javascript高级程序设计/index.md)
