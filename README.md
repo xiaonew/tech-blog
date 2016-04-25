@@ -27,6 +27,8 @@
 
 - [javascript this用法](base/转载/Javascript的this用法.md)
 - [apply/call/bind用法](base/转载/apply和call的用法.md)
+- [ECMA介绍](base/原创/Ecma-262介绍.md)
+- [深入理解js原型和原型链](base/深入理解js原型和原型链.md)
 
 
 ### 读书笔记
