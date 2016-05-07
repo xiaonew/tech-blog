@@ -1,3 +1,9 @@
+###参考
+
+- [i5tingbook](http://i5ting.github.io/stuq-gulp/#10701)
+
+- [gulp-book](https://github.com/xiaonew/gulp-book)
+
 >前面两节学习到gulp的基本知识，也知道gulp可以进行压缩,监控，combo等等，这节进行实战。由于gulp有很多插件,所以我们不必重复造轮子,只用用好相关插件就可以
 
 ### gulp当做web服务器
@@ -39,4 +45,65 @@
 
 [摘自官网](http://www.browsersync.cn/)
 >rowsersync能让浏览器实时、快速响应您的文件更改（html、js、css、sass、less等）并自动刷新页面。更重要的是 Browsersync可以同时在PC、平板、手机等设备下进项调试。您可以想象一下：“假设您的桌子上有pc、ipad、iphone、android等设备，同时打开了您需要调试的页面，当您使用browsersync后，您的任何一次代码保存，以上的设备都会同时显示您的改动”。无论您是前端还是后端工程师，使用它将提高您30%的工作效率。
+
+### gulp 压缩js css
+
+**安装 gulp-uglify：**
+
+```
+    npm install --save-dev gulp-uglify
+```
+
+
+**示例：**
+
+``` javascript
+    gulp.watch('js/*.js',['uglify_js']);
+    gulp.task('uglify_js',function(){
+        gulp.src('js/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('build/js'));
+    });
+    gulp.task('default',['uglify_js']);
+```
+
+上面这段代码可以实现,当js文档下面的js文件内容变化时，会被重新压缩并输出到目的目录
+
+
+### gulp 编译less
+
+**安装：**
+
+```
+
+```
+
+**示例：**
+
+``` javascript
+    const gulp = require('gulp');
+    const less = require('gulp-less');
+    // 编译less
+    // 在命令行输入 gulp less 启动此任务
+    gulp.task('less', function () {
+        // 1. 找到 less 文件
+        gulp.src('less/**.less')
+            // 2. 编译为css
+            .pipe(less())
+            // 3. 另存文件
+            .pipe(gulp.dest('dist/css'))
+    });
+
+    // 在命令行使用 gulp auto 启动此任务
+    gulp.task('auto', function () {
+        // 监听文件修改，当文件被修改则执行 less 任务
+        gulp.watch('less/**.less', ['less'])
+    })
+
+    // 使用 gulp.task('default') 定义默认任务
+    // 在命令行使用 gulp 启动 less 任务和 auto 任务
+    gulp.task('default', ['less', 'auto'])
+```
+
+上面代码可以实现less文件变化,编译输出到css文件夹下
 
