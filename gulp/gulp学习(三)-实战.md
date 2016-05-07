@@ -107,3 +107,8 @@
 
 上面代码可以实现less文件变化,编译输出到css文件夹下
 
+
+>另外还可以用gulp来编译sass和压缩图片以及combo文件等等。可以自己去查看
+
+[利用gulp构建项目](https://github.com/xiaonew/gulp-book/blob/master/chapter7.md)
+
